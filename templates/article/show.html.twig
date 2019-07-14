@@ -2,12 +2,35 @@
 
 {% block title %}Read: {{ title }}{% endblock %}
 
-{% block body %}
-    <h1>{{ title }}</h1>
 
-    <ul>
-        {% for comment in comments %}
-            <li>{{ comment }}</li>
-        {% endfor %}
-    </ul>
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="show-article-container p-3 mt-4">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <h3><i class="pr-3 fa fa-comment"></i>{{ comments|length }} Comments</h3>
+
+                            {% for comment in comments %}
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="comment-container d-inline-block pl-3 align-top">
+                                            <span class="comment"> {{ comment }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
+
